@@ -1,0 +1,5 @@
+#!/bin/bash
+# Skript tervitab kasutajat
+echo -n "Tere, "
+echo -n "$USER"
+echo "!"
