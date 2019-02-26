@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+#Minu muljete väljaanne
+#
+echo "Heiro Kosemets" # väljastab reavahetusega minu nime
+echo "IS118" # väjastab reavahetusega minu õppegrupi
+echo "Õppeaine on väga chill" # väljastab reavahetusega minu tunde õppeaine kohta
+echo "Olen õppinud uusi oskusi ning loodan neid veelgi rohkemgi omandada" # väljastab reavahetusega veel minu muljeid
+#
+#Skripti lõpp
+ 
+
