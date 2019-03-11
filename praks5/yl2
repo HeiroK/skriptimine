@@ -1,0 +1,15 @@
+#!/bin/bash
+#Küsib kasutaja käest vastavad kolmnurga kolm parameetrit ning arvutab nende järgi kolmnurga pindala kasutades Heroni valemit.
+echo -n "Enter A: "
+read A
+echo -n "Enter B: "
+read B
+echo -n "Enter C: "
+read C
+p=$((($A+$B+$C)/2))
+Heron=$(bc <<< "scale=2;sqrt($p*($p-$A)*($p-$B)*($p-$C))")
+echo "A = $A"
+echo "B = $B"
+echo "C = $C"
+echo "S = $Heron"
+
