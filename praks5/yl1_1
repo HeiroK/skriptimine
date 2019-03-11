@@ -1,0 +1,11 @@
+#!/bin/bash
+#Küsib kasutaja käest täisnurkse kolmnurga kaks külge ning arvutab nende järgi kolmanda külje e hüpotenuusi.
+echo -n "Enter A: "
+read A
+echo -n "Enter B: "
+read B
+Hypot=$(bc <<< "scale=2;sqrt(($A*$A)+($B*$B))")
+echo "A = $A"
+echo "B = $B"
+echo "C = $Hypot"
+#c = sqrt((a*a)+(b*b))
