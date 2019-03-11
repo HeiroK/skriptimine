@@ -1,0 +1,14 @@
+#!/bin/bash
+#Küsib kasutaja käest kaks vajalikku külje pikkuse parameetrit ning arvutab nende järgi hüpotenuusi pikkuse.
+echo -n "Enter A: "
+read A
+echo -n "Enter B: "
+read B
+BSquared=$(($B*$B))
+ASquared=$(($A*$A))
+CSquared=$(($BSquared+$ASquared))
+Hypot=$(bc <<< "scale=2;sqrt($CSquared)")
+echo "A = $A"
+echo "B = $B"
+echo "C = $Hypot"
+#c = sqrt((a*a)+(b*b))
