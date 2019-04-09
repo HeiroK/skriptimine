@@ -1,0 +1,13 @@
+#!/bin/bash
+#Arvutab 10 esimese paarisarvu summa.
+sum=0
+for (( arv=1; arv<11; arv++ ))
+do
+	jaak=$(($arv % 2))
+	if [ $jaak -eq 0 ]; then
+			sum=$(($sum + $arv))
+			echo $sum
+	fi
+done
+echo "Vahemikus ühest kümneni paarisarvude summa on: $sum"
+#Skripti lõpp
