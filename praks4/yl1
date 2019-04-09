@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Sisestage oma ees- ja perekonnanimi: "
+#Küsib kasutaja eesnimi ja perekonnanime
+read eesnimi perenimi
+#Jäädvustab kasutaja ees- ja perenime vastavalt sisestustele
+echo "Teie eesnimi on $eesnimi ja perekonnanimi on $perenimi."
+#Väljastab vastavalt kasutaja ees- ja perenime.
+#skripti lõpp
