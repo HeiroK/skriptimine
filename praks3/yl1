@@ -1,0 +1,9 @@
+#!/bin/bash
+echo $(date +"Today is %A, %B %e, %Y")
+# Väljastab kuupäeva
+echo $(date +"Time is %R")
+# Väljastab kellaaja
+cal
+# Väljastab kalendri
+# Skripti lõpp
+
