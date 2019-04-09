@@ -1,0 +1,17 @@
+#!/bin/bash
+# Väljastab tärnid reas vastavalt kasutaja sisestusele kasvavas järjekorras
+echo -n "Sisesta vajaminevad read: "
+read rida
+for (( i = 1 ; i<= $rida; i++ ))
+	do
+		for (( j = 1 ; j<= $rida; j++ ))
+		do
+		if [ $i -ge $j ]; then
+		echo -n "*"
+	else
+	echo -n " "
+	fi
+	done
+echo ""
+done
+#skripti lõpp 
