@@ -1,0 +1,6 @@
+#!/bin/bash
+echo -n $(hostname) && echo -n " at " && echo -n $(uptime | cut -f2 -d" ") && echo -n " " && echo -n $(uptime -p | cut -f1 -d",")
+# Väljastab arvuti nime, hetke kellaaja ja arvuti tööaja tundides
+echo " "
+# Lisab tühja rea, et vältida käsureaga ühendumist
+# Skripti lõpp
