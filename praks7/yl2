@@ -1,0 +1,20 @@
+#!/bin/bash
+#Küsib kasutajalt praeguse kuu numbrit ning väljastab, mis aastaajaga on tegemist.
+echo -e "Sisestage praeguse kuu number \c"
+read kuu
+if test $kuu -eq 1 -o $kuu -eq 2 -o $kuu -eq 12
+then
+	echo "Praegu on talv."
+elif test $kuu -ge 3 -a $kuu -le 5
+then
+	echo "Praegu on kevad."
+elif test $kuu -ge 9 -a $kuu -le 11
+then
+	echo "Praegu on sügis."
+elif test $kuu -ge 6 -a $kuu -le 8
+then
+	echo "Praegu on suvi."
+else
+	echo "Antud kuu number ei kajastu Gregoriouse kalendris."
+fi
+#Skripti lõpp
