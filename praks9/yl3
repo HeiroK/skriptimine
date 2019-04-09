@@ -1,0 +1,24 @@
+#!/bin/bash
+# Väljastab read ning tärnid esimeses ning viimases reas vastavalt kasutaja sisestusele.
+# Ehk tekitab nö kasti efekti.
+echo -n "Sisesta vajaminevad read: "
+read rida
+echo -n "Sisesta vajaminevate tärnide arv reas: "
+read tarnid
+for (( i = 1 ; i<= $rida; i++ ))
+do
+	for (( j = 1 ; j<= $tarnid; j++ ))
+	do
+	if [ $i -eq 1 -o $i -eq $rida ]; then
+		echo -n "*"
+	else
+	if [ $j -eq 1 -o $j -eq $tarnid ]; then
+		echo -n "*"
+	else
+		echo -n " "
+	fi
+fi
+done
+	echo ""
+done
+#skripti lõpp
