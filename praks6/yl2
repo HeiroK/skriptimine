@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+echo -n "Sisestage reisijate arv: " # Küsib kasutajalt resijate arvu
+read rarv
+echo -n "Sisestage bussikohtade arv: " # Küsib kasutajalt  mitu bussikohta on olemas
+read bkohad
+buss=$(($rarv / $bkohad)) # Arvutab mitu täis bussi on vaja
+#barv=`expr $buss \* $bkohad` # Arvutab mitu kohta on saadaval
+
+ylejaanud=$(($rarv % $bkohad)) #Arvutab, kas kõik said koha bussis või mitte
+if test $ylejaanud -gt 0
+	then buss=$(($buss + 1)) # Kui kohti jäi puudu, siis lisatakse üks buss juurde
+fi
+
+echo "Kokku on vaja $buss täisbussi"
+
+#mahj=`expr $rarv - $barv` # Lahutab reisijate arvust kogu kohtade arvu
+#echo "Täis busside arv: $buss bussi- maha jääb $mahj resijat"
+# skripti lõpp
+ 
