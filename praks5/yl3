@@ -1,0 +1,11 @@
+#!/bin/bash
+#Arvutab vastavalt kasutaja sisestusele mitmendal nädalapäeval kasutaja reisilt tagasi tuleb.
+echo "Pühapäev - 0, Esmaspäev - 1, ..., Laupäev - 6"
+echo "Mis päeval sõidate ära?"
+read algus
+echo -n "Sisesta reisi pikkus päevades: "
+read pikkus
+ylepikkus=$(($pikkus % 7))
+tagasi=$(($algus + $ylepikkus))
+echo "Oled tagasi $tagasi. päeval."
+#skripti lõpp
