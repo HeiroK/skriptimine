@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# paarsuse kontroll
+#
+#echo -n "Sisesta suvaline täisarv: "
+#read arv
+exec 2> /dev/null
+# arvutamine jääk 2-ga jagamisel
+jaak=$(( $1 % 2 ))
+# 4 % 2 => 0 -> siis arv on paaris
+# 5 % 2 => 1 -> siis arv on paaritu
+if [ $jaak -eq 0 ] ; then
+	echo "$1 on paaris"
+	else
+		if [ $jaak -eq 1 ] ; then
+			echo "$1 on paaritu"
+		else 
+			echo "Sisesta number!"
+	fi
+fi
+
+# tingimuse kontroll on lõppenud
