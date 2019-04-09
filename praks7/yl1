@@ -1,0 +1,21 @@
+#!/bin/bash
+#Küsib kasutajalt tema vanust ning väljastab teate vastavalt sisestusele
+echo -n "Sisesta oma vanus: "
+read vanus
+exec 2>/dev/null
+if test $vanus -gt 0 -a $vanus -lt 11
+then
+	echo "Te olete laps."
+elif test $vanus -ge 11 -a $vanus -lt 18
+then
+	echo "Te olete nooruk."
+elif test $vanus -ge 18 -a $vanus -lt 63
+then
+	echo "Te olete täiskasvanu."
+elif test $vanus -ge 63
+then
+	echo "Te olete seenior."
+else
+	echo "Viga vanuse sisestamisel!"
+fi 
+#skripti lõpp
