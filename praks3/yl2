@@ -1,0 +1,5 @@
+#!/bin/bash
+find /var/ -type f -name "*.log" 2>/dev/null -exec wc -l {} \; | sort -nr
+# otsib var kaustast nime järgi lõpuga .log faile
+# loeb ridade arvu ja järjestab tulemi kahavenvas järjekorras
+# 2>/dev/null eemaldab tulemist veateated
