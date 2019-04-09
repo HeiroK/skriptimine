@@ -1,0 +1,11 @@
+#!/bin/bash
+# Arvutab kasutaja poolt sisestatud täisarvus olevate numbrite summa.
+echo -n "Sisesta suvaline täisarv: " #Küsib kasutajalt täisarvu
+read arv #Jätab sisestatud arvu meelde
+while [ $arv -ne 0 ]
+do
+	jaak=$(($arv % 10))
+	sum=$(($sum + $jaak))
+	arv=$(($arv / 10))
+done
+echo "Sisestatud täisarvus olevate numbrite summa on $sum."
