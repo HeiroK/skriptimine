@@ -1,0 +1,16 @@
+#!/bin/bash
+# Väljastab read ning tärnid igas reas vastavalt kasutaja sisestusele
+echo -n "Sisesta vajaminevad read: "
+read rida
+echo -n "Sisesta vajaminevate tärnide arv reas: "
+read tarnid
+for (( i = 1 ; i<= $rida; i++ ))
+
+	do
+		for (( j = 1 ; j<= $tarnid; j++ ))
+		do
+		echo -n "*"
+	done
+echo ""
+done
+#skripti lõpp
