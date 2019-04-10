@@ -1,1 +1,53 @@
+#!/bin/bash
+# Kasutaja loomine
+	while true; do
+	if [ $(id -u) -eq 0 ]; then
+	echo -n "Sisesta kasutajanimi: " 
+	read kasutajanimi
+	egrep "^$kasutajanimi" /etc/passwd >/dev/null
+	if [ $? -eq 0 ]; then
+		echo "$kasutajanimi on juba olemas!"
+	else
+		grupp=0
+		echo -n "Vali grupp (1 - opilased 2 - opetajad): "
+		read grupp
+		if [ $grupp -eq 1 ]; then
+		grupp=opilased
+		echo "Valisid grupi $grupp."	
+		parool=$(openssl rand -base64 4)
+		useradd -m -p $parool -g 1001 -s /bin/bash $kasutajanimi
+		echo "Teie kasutajanimi on $kasutajanimi"
+		echo "Teie parool on $parool"
+		echo "Teie kodukaust on /home/$kasutajanimi/"
+		echo "Vajutage X, et lõpetada kasutajate sisestamine või mõni muu klahv, et jätkata"
+		read -N 1 input
+		if [[ $input = "x" ]] || [[ $input = "X" ]]; then
+		echo ""
+		exit
+		fi
+		else
+			if [ $grupp -eq 2 ]; then
+			grupp=opetajad
+			echo "Valisid grupi $grupp."
+			parool=$(openssl rand -base64 4)
+			useradd -m -p $parool -g 1002 -s /bin/bash $kasutajanimi
+			echo "Teie kasutajanimi on $kasutajanimi"
+			echo "Teie parool on $parool"
+			echo "Teie kodukaust on /home/$kasutajanimi/"
+			echo "Vajutage X, et lõpetada kasutajate sisestamine või mõni muu klahv, et jätkata."
+			read -N 1 input
+			if [[ $input = "x" ]] || [ $input = "X" ]]; then
+			echo "" 
+			exit
+			fi
+			else
+				echo "Viga grupi valimisel!"
+			fi
+		fi
+	fi
+		else
+			echo "Ainult root kasutaja võib kasutajat lisada! Jätkamiseks Ctrl + C!"
 
+fi
+done
+#Skripti lõpp
